@@ -6,21 +6,22 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AgroSmart.Infrastructure.Identity.Seeds
 {
-    public static class DefaultClientUser
+    public class DefaultAdminUser
     {
         public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             ApplicationUser defaultUser = new()
             {
-                UserName = "clientuser",
-                Email = "clientuser@gmail.com",
+                UserName = "adminuser",
+                Email = "adminuser@gmail.com",
                 FirstName = "User",
-                LastName = "Cliente",
-                IdCard = "40226789646",
+                LastName = "Admin",
+                IdCard = "40226789647",
                 ImageUser = "",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,
-                IsActive = true,                
+                IsActive = true,
+                
             };
 
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
@@ -28,8 +29,8 @@ namespace AgroSmart.Infrastructure.Identity.Seeds
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "123_Client");
-                    await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
+                    await userManager.CreateAsync(defaultUser, "123_Admin");
+                    await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
                 }
             }
 
