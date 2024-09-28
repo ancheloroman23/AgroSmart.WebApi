@@ -1,5 +1,3 @@
-﻿
-
 using AgroSmart.Core.Application.Enums;
 using AgroSmart.Infraestructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
