@@ -1,9 +1,9 @@
-﻿using AgroSmart.Infrastructure.Identity.Entities;
+﻿using AgroSmart.Infraestructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AgroSmart.Infrastructure.Identity.Context
+namespace AgroSmart.Infraestructure.Identity.Context
 {
     public class IdentityContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,9 +1,9 @@
 ﻿using AgroSmart.Core.Application.Enums;
-using AgroSmart.Infrastructure.Identity.Entities;
+using AgroSmart.Infraestructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 
 
-namespace AgroSmart.Infrastructure.Identity.Seeds
+namespace AgroSmart.Infraestructure.Identity.Seeds
 {
     public static class DefaultRoles
     {

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 
-namespace AgroSmart.Infrastructure.Identity.Entities
+namespace AgroSmart.Infraestructure.Identity.Entities
 {
     public class ApplicationUser : IdentityUser
     {
