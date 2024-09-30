@@ -1,4 +1,6 @@
 ﻿using AgroSmart.Core.Domain.Commons;
+using AgroSmart.Core.Domain.Entities;
+using AgroSmart.Infraestructure.Persistence.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace AgroSmart.Infraestructure.Persistence.Context
@@ -26,6 +28,16 @@ namespace AgroSmart.Infraestructure.Persistence.Context
             return base.SaveChangesAsync(cancellationToken);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
+            // Aplicar la configuración de la entidad FormTierra
+            modelBuilder.ApplyConfiguration(new FormTierraConfiguration());
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<FormTierra> FormTierras { get; set; }
     }
+
 }
+

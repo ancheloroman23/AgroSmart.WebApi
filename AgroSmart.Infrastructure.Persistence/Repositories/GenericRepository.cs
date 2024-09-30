@@ -1,9 +1,6 @@
-﻿
-
-using AgroSmart.Core.Application.Interfaces.Repositories;
+﻿using AgroSmart.Core.Application.Interfaces.Repositories;
 using AgroSmart.Infraestructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace AgroSmart.Infraestructure.Persistence.Repositories
 {
@@ -60,6 +57,6 @@ namespace AgroSmart.Infraestructure.Persistence.Repositories
             return await Entities.FindAsync(id);
         }
 
-        
+
     }
 }
