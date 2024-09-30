@@ -104,7 +104,6 @@ namespace AgroSmart.WebApi.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-
         }
     }
 }
