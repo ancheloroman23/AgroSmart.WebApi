@@ -46,7 +46,7 @@ namespace AgroSmart.WebApi.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
-        }        
+        }
 
         [Authorize(Roles = "Admin")]
         [HttpPost("RegisterAdmin")]
@@ -76,6 +76,35 @@ namespace AgroSmart.WebApi.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
+        }
+
+        [HttpPost("RegisterClient")]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [SwaggerOperation(
+         Summary = "Creación de un usuario de tipo Cliente",
+         Description = "Se envían los parámetros necesarios para crear un usuario de tipo Cliente"
+     )]
+        public async Task<IActionResult> RegisterClient(RegisterRequest register)
+        {
+            try
+            {
+                register.SelectRole = (int)Roles.Client; // Asignar rol de cliente
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Envíe los datos correctamente");
+                }
+                var response = await _accountService.RegisterAsync(register, null);
+                if (response.HasError)
+                {
+                    return BadRequest(response.Error);
+                }
+                return StatusCode(StatusCodes.Status201Created, "Cliente creado con éxito");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+
         }
     }
 }

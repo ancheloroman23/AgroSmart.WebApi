@@ -1,0 +1,7 @@
+
+Anchelo:
+
+"DefaultConnection": "Server=DESKTOP-36MF8L1\\SQLEXPRESS01;Database=ApiAgroSmart;MultipleActiveResultSets=True;TrustServerCertificate=True;Integrated Security=True",
+    "IdentityConnection": "Server=DESKTOP-36MF8L1\\SQLEXPRESS01;Database=ApiAgroSmart;MultipleActiveResultSets=True;TrustServerCertificate=True;Integrated Security=True"
+
+    Hilari:
