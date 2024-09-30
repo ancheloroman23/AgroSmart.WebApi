@@ -168,7 +168,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
             if (listRole.Contains(Roles.Client.ToString()))
             {
                 response.HasError = true;
-                response.Error = "No puedes usar la WebApi, ingresa con un usuario tipo developer o admin";
+                response.Error = "No puedes usar la WebApi, ingresa con un usuario tipo admin";
                 return response;
             }
             //Mapeando el Applicationuser a Authentication Response.

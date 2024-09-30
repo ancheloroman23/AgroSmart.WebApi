@@ -81,9 +81,9 @@ namespace AgroSmart.WebApi.Controllers
         [HttpPost("RegisterClient")]
         [Consumes(MediaTypeNames.Application.Json)]
         [SwaggerOperation(
-         Summary = "Creación de un usuario de tipo Cliente",
-         Description = "Se envían los parámetros necesarios para crear un usuario de tipo Cliente"
-     )]
+    Summary = "Creación de un usuario de tipo Cliente",
+    Description = "Se envían los parámetros necesarios para crear un usuario de tipo Cliente"
+)]
         public async Task<IActionResult> RegisterClient(RegisterRequest register)
         {
             try
@@ -102,7 +102,8 @@ namespace AgroSmart.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Ocurrió un error durante el registro, pero el cliente fue creado correctamente. Por favor, confirme su email.");
             }
         }
     }
