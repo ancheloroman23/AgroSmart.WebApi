@@ -7,8 +7,6 @@ namespace AgroSmart.Infraestructure.Identity.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string IdCard { get; set; }
-        public string? PhoneNumber {  get; set; }
         public string ImageUser { get; set; }
         public bool IsActive { get; set; }
     }

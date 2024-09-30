@@ -16,10 +16,8 @@ namespace AgroSmart.Infraestructure.Identity.Seeds
                 Email = "clientuser@gmail.com",
                 FirstName = "User",
                 LastName = "Cliente",
-                IdCard = "40226789646",
                 ImageUser = "",
                 EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
                 IsActive = true,                
             };
 
