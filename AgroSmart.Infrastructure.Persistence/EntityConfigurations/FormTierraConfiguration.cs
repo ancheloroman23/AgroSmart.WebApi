@@ -1,4 +1,5 @@
 ﻿using AgroSmart.Core.Domain.Entities;
+using AgroSmart.Infraestructure.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,8 +9,7 @@ namespace AgroSmart.Infraestructure.Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<FormTierra> builder)
         {
-            // Nombre de la tabla en la base de datos
-            //  builder.ToTable("FormTierra");
+            builder.ToTable("FormTierra");
 
             // Definir la clave primaria
             builder.HasKey(t => t.Id);
@@ -55,6 +55,12 @@ namespace AgroSmart.Infraestructure.Persistence.EntityConfigurations
 
             builder.Property(t => t.LastModified)
                 .IsRequired(false);
+
+            // Configurar la relación con ApplicationUser (opcional)
+            builder.HasOne<ApplicationUser>()
+                .WithMany() // Si ApplicationUser tiene una colección de FormTierra
+                .HasForeignKey(t => t.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

@@ -46,10 +46,6 @@ namespace AgroSmart.Infraestructure.Identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdCard")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ImageUser")
                         .HasColumnType("nvarchar(max)");
 

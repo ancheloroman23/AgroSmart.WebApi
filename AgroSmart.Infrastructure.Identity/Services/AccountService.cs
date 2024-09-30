@@ -78,9 +78,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
                 UserName = request.UserName,
                 Email = request.Email,
                 FirstName = request.FirstName,
-                LastName = request.LastName,
-                PhoneNumber = request.Phone,
-                IdCard = request.IdCard,
+                LastName = request.LastName,                                
                 ImageUser = request.ImageUser,
                 IsActive = isActive,
                 EmailConfirmed = emailConfirmed
@@ -437,9 +435,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 UserName = user.UserName,
-                Email = user.Email,
-                Phone = user.PhoneNumber,
-                IdCard = user.IdCard,
+                Email = user.Email,                                
                 ImageUser = user.ImageUser,                
                 Roles = _userManager.GetRolesAsync(user).Result.ToList(),
                 IsVerified = user.EmailConfirmed,
@@ -461,9 +457,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
                     FirstName = u.FirstName,
                     LastName = u.LastName,
                     Email = u.Email,
-                    UserName = u.UserName,
-                    IdCard = u.IdCard,
-                    Phone = u.PhoneNumber,
+                    UserName = u.UserName,                                      
                     ImageUser = u.ImageUser,                    
                     Roles = _userManager.GetRolesAsync(u).Result.ToList(),
                     IsActive = u.IsActive,
@@ -524,9 +518,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
             user.ImageUser = request.ImageUser;
             user.LastName = request.LastName;
             user.Email = request.Email;
-            user.UserName = request.UserName;
-            user.IdCard = request.IdCard;
-            user.PhoneNumber = request.Phone;
+            user.UserName = request.UserName;               
             #endregion
             await _userManager.UpdateAsync(user);
 

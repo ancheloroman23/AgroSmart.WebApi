@@ -18,11 +18,8 @@ namespace AgroSmart.Core.Application.Dtos.Accounts
         [SwaggerParameter(Description = "La contraseña de la persona a quien se le creara la cuenta")]
         public string Password { get; set; } = null!;
         [SwaggerParameter(Description = "La contraseña de la persona a quien se le creara la cuenta")]
-        public string ConfirmPassword { get; set; } = null!;
-        [SwaggerParameter(Description = "El numero de telefono de la persona a quien se le creara la cuenta")]
-        public string Phone { get; set; } = null!;
-        [SwaggerParameter(Description = "La cedula de la persona a quien se le creara la cuenta")]
-        public string IdCard { get; set; } = null!;
+        public string ConfirmPassword { get; set; } = null!;        
+        
         [JsonIgnore]
         public bool IsActive { get; set; }
         [JsonIgnore]

@@ -13,9 +13,9 @@ namespace AgroSmart.Infraestructure.Identity.Seeds
                 UserName = "adminuser",
                 Email = "adminuser@gmail.com",
                 FirstName = "User",
-                LastName = "Admin",
+                LastName = "Admin",                
                 ImageUser = "",
-                EmailConfirmed = true,
+                EmailConfirmed = true,                
                 IsActive = true,
                 
             };

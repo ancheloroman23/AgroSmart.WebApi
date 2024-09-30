@@ -103,7 +103,7 @@ namespace AgroSmart.WebApi.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Ocurrió un error durante el registro, pero el cliente fue creado correctamente. Por favor, confirme su email.");
+                    "El usuario fue creado correctamente. Por favor, confirme su email.");
             }
         }
     }

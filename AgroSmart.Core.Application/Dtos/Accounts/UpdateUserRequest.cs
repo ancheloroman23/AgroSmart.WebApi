@@ -9,8 +9,7 @@ namespace AgroSmart.Core.Application.Dtos.Accounts
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public string? ImageUser { get; set; }
-        public string Phone { get; set; }
+        public string? ImageUser { get; set; }        
         public IFormFile? File { get; set; }
         public string IdCard { get; set; }
         public bool HasError { get; set; }

@@ -12,6 +12,7 @@ namespace AgroSmart.Core.Domain.Entities
         public string TipoDeFertilizacion { get; set; }
         public bool ProblemasDePlagas { get; set; }
         public string TamanoTerreno { get; set; }
+
         public string UsuarioId { get; set; }  // Relacionado con el usuario registrado
     }
 }

@@ -22,11 +22,7 @@ namespace AgroSmart.Core.Application.ViewModels.User
 
         [Required(ErrorMessage = "Debe ingresar un correo electrónico.")]
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-        [Required(ErrorMessage = "Debe ingresar una cedula.")]
-        [DataType(DataType.Text)]
-        public string IdCard { get; set; }
+        public string Email { get; set; }        
 
         [Required(ErrorMessage = "Debe ingresar una contraseña con caracteres especiales, numeros y al menos una mayúscula.")]
         [DataType(DataType.Password)]
@@ -38,10 +34,7 @@ namespace AgroSmart.Core.Application.ViewModels.User
         public string? ConfirmPassword { get; set; }
 
         public int? SelectRole { get; set; }
-
-        [Required(ErrorMessage = "Debe ingresar un numero telefonico")]
-        [DataType(DataType.PhoneNumber)]
-        public string PhoneNumber { get; set; }
+        
         public bool IsActive { get; set; }
 
         [DataType(DataType.Upload)]
