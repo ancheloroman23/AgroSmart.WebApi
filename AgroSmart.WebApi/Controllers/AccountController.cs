@@ -12,11 +12,11 @@ namespace AgroSmart.WebApi.Controllers
     [SwaggerTag("Sistema de Membresia")]
     public class AccountController : BaseApiController
     {
-        private readonly IAccountService _accountService;
+        private readonly IAccountService _accountService;        
 
         public AccountController(IAccountService accountService)
         {
-            _accountService = accountService;
+            _accountService = accountService;            
         }
 
         [HttpPost("Authentication")]
@@ -24,7 +24,7 @@ namespace AgroSmart.WebApi.Controllers
         [SwaggerOperation(
             Summary = "Login de usuario",
             Description = "Incio de sesion para los usuarios del sistema"
-            )]
+        )]
 
         public async Task<IActionResult> Authentication(AuthenticationRequest request)
         {
@@ -81,9 +81,9 @@ namespace AgroSmart.WebApi.Controllers
         [HttpPost("RegisterClient")]
         [Consumes(MediaTypeNames.Application.Json)]
         [SwaggerOperation(
-    Summary = "Creación de un usuario de tipo Cliente",
-    Description = "Se envían los parámetros necesarios para crear un usuario de tipo Cliente"
-)]
+            Summary = "Creación de un usuario de tipo Cliente",
+            Description = "Se envían los parámetros necesarios para crear un usuario de tipo Cliente"
+        )]
         public async Task<IActionResult> RegisterClient(RegisterRequest register)
         {
             try
@@ -103,8 +103,10 @@ namespace AgroSmart.WebApi.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    "El usuario fue creado correctamente. Por favor, confirme su email.");
+                    "El usuario fue creado correctamente. Por favor, hable con el Admin para que le dé acceso o mande un Email a (ancheloroman23@gmail.com)!");
             }
         }
+
+
     }
 }

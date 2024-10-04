@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{5DB37579-441F-442F-A53F-591E336D3E16}"
 	ProjectSection(SolutionItems) = preProject
+		ComandoSQL.txt = ComandoSQL.txt
 		Para el ConnectionString.txt = Para el ConnectionString.txt
 	EndProjectSection
 EndProject

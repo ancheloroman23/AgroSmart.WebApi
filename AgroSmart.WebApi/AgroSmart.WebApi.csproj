@@ -29,4 +29,8 @@
     <ProjectReference Include="..\AgroSmart.Infrastructure.Shared\AgroSmart.Infraestructure.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\V1\" />
+  </ItemGroup>
+
 </Project>

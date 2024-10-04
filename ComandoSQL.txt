@@ -1,0 +1,7 @@
+ UPDATE [Identity].Users
+SET IsActive = 1
+WHERE Id = 'ca692bc7-4fa5-4842-8ff4-fe3143b3d747';
+
+ UPDATE [Identity].Users
+SET EmailConfirmed = 1
+WHERE Id = 'ca692bc7-4fa5-4842-8ff4-fe3143b3d747';

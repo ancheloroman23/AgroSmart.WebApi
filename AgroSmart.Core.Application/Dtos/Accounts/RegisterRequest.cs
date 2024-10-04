@@ -1,4 +1,5 @@
 ﻿using Swashbuckle.AspNetCore.Annotations;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace AgroSmart.Core.Application.Dtos.Accounts
@@ -24,5 +25,13 @@ namespace AgroSmart.Core.Application.Dtos.Accounts
         public bool IsActive { get; set; }
         [JsonIgnore]
         public int SelectRole { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (Password != ConfirmPassword)
+            {
+                yield return new ValidationResult("Las contraseñas no coinciden.", new[] { nameof(Password), nameof(ConfirmPassword) });
+            }
+        }
     }
 }

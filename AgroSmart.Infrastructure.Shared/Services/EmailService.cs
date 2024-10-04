@@ -44,8 +44,12 @@ namespace AgroSmart.Infraestructure.Shared.Services
             }
             catch (Exception ex)
             {
+
                 throw new Exception(ex.Message);
             }
         }
+
+
+
     }
 }

@@ -67,7 +67,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
             //Manejo de variables
             Dictionary<int, (bool emailConfirmed, bool isActive)> roleProperties = new()
             {
-                { (int)Roles.Client, (false, false) },                
+                { (int)Roles.Client, (true, false) },                
                 { (int)Roles.Admin, (true, true) }             
             };
 
@@ -162,13 +162,13 @@ namespace AgroSmart.Infraestructure.Identity.Services
                 return response;
             }
 
-            var listRole = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
+            /*var listRole = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
             if (listRole.Contains(Roles.Client.ToString()))
             {
                 response.HasError = true;
                 response.Error = "No puedes usar la WebApi, ingresa con un usuario tipo admin";
                 return response;
-            }
+            }*/
             //Mapeando el Applicationuser a Authentication Response.
             response.Id = user.Id;
             response.Email = user.Email;
@@ -177,7 +177,7 @@ namespace AgroSmart.Infraestructure.Identity.Services
             response.FirstName = user.FirstName;
             response.LastName = user.LastName;
             response.IsActive = user.IsActive;
-            response.Roles = listRole.ToList();
+            /*response.Roles = listRole.ToList();*/
             response.IsVerified = user.EmailConfirmed;
             //Asignando el JWT.
             JwtSecurityToken jwtSecurityToken = await GetSecurityToken(user);

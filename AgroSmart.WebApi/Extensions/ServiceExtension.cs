@@ -14,7 +14,7 @@ namespace AgroSmart.WebApi.Extensions
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "RealEstate API",
+                    Title = "AgroSmart API",
                     Description = " Our API for you",
                     Contact = new OpenApiContact
                     {
