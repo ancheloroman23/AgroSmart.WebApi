@@ -6,6 +6,7 @@ using AgroSmart.Infraestructure.Identity.Entities;
 using AgroSmart.Infraestructure.Identity.Seeds;
 using AgroSmart.Infraestructure.Shared;
 using AgroSmart.WebApi.Extensions;
+using AgroSmart.Infraestructure.Persistence;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,15 @@ builder.Services.AddControllers(options =>
     options.SuppressMapClientErrors = true;
 });
 
+// Configuración de sesión
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddSharedInfrastructure(builder.Configuration); // Registro de EmailService
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddIdentityInfrastructureForApi(builder.Configuration);
@@ -31,6 +41,8 @@ builder.Services.AddSwaggerExtension();
 builder.Services.AddApiVersioningExtension();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+
 
 var app = builder.Build();
 
@@ -67,12 +79,13 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthentication();
+app.UseSession();  // Mueve esto antes de UseAuthorization
 app.UseAuthorization();
 
 app.UseSwaggerExtension();
 app.UseErrorHandlingMiddleware(); // Asegúrate de que esté implementado
 app.UseHealthChecks("/health");
-app.UseSession();
+/*app.UseSession();*/
 
 app.UseEndpoints(endpoints =>
 {

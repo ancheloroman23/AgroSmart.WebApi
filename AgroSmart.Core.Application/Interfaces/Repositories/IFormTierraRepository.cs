@@ -2,7 +2,7 @@
 
 namespace AgroSmart.Core.Application.Interfaces.Repositories
 {
-    public interface IFormTierraRepository
+    public interface IFormTierraRepository : IGenericRepository<FormTierra>
     {
         Task AddTierraAsync(FormTierra tierra);
     }

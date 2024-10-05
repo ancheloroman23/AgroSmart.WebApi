@@ -1,4 +1,7 @@
 ﻿using AgroSmart.Core.Application.Facade;
+using AgroSmart.Core.Application.Features.Post.CommandHandlers;
+using AgroSmart.Core.Application.Features.Topic.CommandHandlers;
+using AgroSmart.Core.Application.Features.Topic.QueryHandlers;
 using AgroSmart.Core.Application.Interfaces.Services;
 using AgroSmart.Core.Application.Services;
 using MediatR;
@@ -19,7 +22,13 @@ namespace AgroSmart.Core.Application
             services.AddTransient(typeof(IGenericService<,,>), typeof(GenericService<,,>));
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IForumService, ForumService>();
             #endregion
+
+            services.AddTransient<CreateTopicCommandHandler>();
+            services.AddTransient<AddPostCommandHandler>();
+            services.AddTransient<GetAllTopicsQueryHandler>();
+            services.AddTransient<GetTopicByIdQueryHandler>();
 
             #region Facade
             services.AddScoped<FacadeForImages>();

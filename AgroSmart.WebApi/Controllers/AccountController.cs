@@ -78,6 +78,7 @@ namespace AgroSmart.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "client")]
         [HttpPost("RegisterClient")]
         [Consumes(MediaTypeNames.Application.Json)]
         [SwaggerOperation(

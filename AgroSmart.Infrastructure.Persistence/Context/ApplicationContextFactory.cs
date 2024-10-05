@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace AgroSmart.Infraestructure.Persistence.Context
 {
+    //Acuerdate de eliminarlo
+
     public class ApplicationContextFactory : IDesignTimeDbContextFactory<ApplicationContext>
     {
         public ApplicationContext CreateDbContext(string[] args)

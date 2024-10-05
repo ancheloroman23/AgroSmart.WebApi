@@ -31,12 +31,17 @@ namespace AgroSmart.Infraestructure.Persistence.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            // Aplicar la configuración de la entidad FormTierra
+            // Aplicar la configuración de la entidades
             modelBuilder.ApplyConfiguration(new FormTierraConfiguration());
+            modelBuilder.ApplyConfiguration(new TopicConfiguration());
+            modelBuilder.ApplyConfiguration(new PostConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<FormTierra> FormTierras { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 
 }
